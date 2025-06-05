@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Book Library</title>
+</head>
+<body>
+    <div class="container">
+        <% if (books.length != 0) { %>
+            <h1>Library Total: <%= books.length %></h1>
+        <% } else { %>
+            <h1>Library</h1>
+        <% } %>
+        <ul>
+            <% books.forEach((book) => { %>
+                <li>
+                    <h2>
+                        <%= book.title %>
+                    </h2>
+                    <p>
+                        <%= book.author %>
+                    </p>
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="bookID" value="<%= book.id %>">
+                        <button type="submit">DELETE</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div>
+        <form action="/add" method="POST">
+            <label for="addBook">Book_name:</label>
+            <input type="text" name="addBook" placeholder="Add a book you read" autofocus>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
