@@ -26,4 +26,5 @@ Search for any book using the [Open Library API](https://openlibrary.org/dev/doc
 ---
 
 ## 📦 Setup Instructions
-1. **npm i** to install and run **node index.js**
+1. Run library.sql on db
+2. **npm i** to install and run **node index.js**
